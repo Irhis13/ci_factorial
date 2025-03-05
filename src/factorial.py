@@ -1,17 +1,26 @@
+"""Módulo que contiene la función factorial"""
+
 def factorial(n):
-    # Validar si el numero es entero
+    """
+    Calcula el factorial de un número.
+
+    Parámetros:
+    - n: Número entero positivo.
+
+    Retorna:
+    - El factorial de n.
+
+    Lanza:
+    - TypeError si n no es un entero.
+    - ValueError si n es negativo.
+    """
     if not isinstance(n, int):
         raise TypeError("El número debe ser un entero")
-
-    # Validar si el numero es negativo
     if n < 0:
         raise ValueError("El número no puede ser negativo")
-
-    # Caso base
-    if n == 0 or n == 1:
+    if n in {0, 1}:  # Corrección sugerida por pylint
         return 1
-
-    # Calcular factorial iterativamente
+    
     resultado = 1
     for i in range(2, n + 1):
         resultado *= i
