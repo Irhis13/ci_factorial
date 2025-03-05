@@ -1,5 +1,5 @@
 import pytest
-from proyecto_factorial.src.factorial import factorial
+from src.factorial import factorial
 
 # Se elimina este test porque la función ya está definida
 # def test_factorial_1_falla():
