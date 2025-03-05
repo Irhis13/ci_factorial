@@ -1,27 +1,20 @@
-"""Módulo que contiene la función factorial"""
-
+"""
+Este módulo contiene la función factorial(n) que calcula el factorial de un número entero n.
+"""
 def factorial(n):
+
     """
-    Calcula el factorial de un número.
-
-    Parámetros:
-    - n: Número entero positivo.
-
-    Retorna:
-    - El factorial de n.
-
-    Lanza:
-    - TypeError si n no es un entero.
-    - ValueError si n es negativo.
+    Esta función calcula el factorial de un número entero n.
+    Para ello, comprueba que sea un número entero y que sea positivo.
+    Y en el caso de ser 0, devuelve 1.
+    :param n:
+    :return:
     """
     if not isinstance(n, int):
-        raise TypeError("El número debe ser un entero")
+        raise TypeError("Input debe de ser un Integer")
     if n < 0:
-        raise ValueError("El número no puede ser negativo")
-    if n in {0, 1}:  # Corrección sugerida por pylint
+        raise ValueError("No se puede hacer el factorial de un número negativo")
+    if n == 0:
         return 1
-    
-    resultado = 1
-    for i in range(2, n + 1):
-        resultado *= i
-    return resultado
+
+    return n * factorial(n - 1)
